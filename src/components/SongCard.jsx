@@ -39,8 +39,6 @@ const SongCard = ({ song, isPlaying, activeSong, data ,i }) => {
         <p className="font-semibold text-lg text-white truncate">
           <Link to={`/songs/${song?.id.playlistId}`}>
           {song.snippet.title}
-          handlePause={handlePauseClick}
-          handlePlay={handlePlayClick}
           </Link>
         </p>
         <p className="mt-1 text-sm text-gray-300 truncate">

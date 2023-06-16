@@ -21,11 +21,25 @@ export const youtubeV3Api = createApi({
                     order: 'date',
                     type: 'playlist',
                 },
-            })
+            }),
         }),
-    }),
-});
 
+        getSongsBySearch: builder.query({
+            query: (searchTerm) => ({
+                url: '/search',
+                params: {
+                    q: searchTerm,
+                    part: 'snippet,id',
+                    maxResults: '20',
+                    order: 'date',
+                    type: 'playlist',
+                },
+            }),
+//`v1/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}` }),
+        }),
+    })
+})
 export const {
     useGetTopChartsQuery,
+    useGetSongsBySearchQuery,
 } = youtubeV3Api;
