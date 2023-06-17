@@ -37,9 +37,20 @@ export const youtubeV3Api = createApi({
             }),
 //`v1/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}` }),
         }),
+
+        getPlaylistDetails: builder.query({
+            query: (PlaylistId) => ({
+                url: '/playlists',
+                params: {
+                    id: PlaylistId,
+                    part: 'snippet',
+                },
+            }),
+        }),
     })
 })
 export const {
     useGetTopChartsQuery,
     useGetSongsBySearchQuery,
+    useGetPlaylistDetailsQuery,
 } = youtubeV3Api;
