@@ -41,7 +41,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
     : "";
 
   return (
-    <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+    <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer" onClick={handleLinkClick}>
       <div className="relative w-full h-56 group">
         <div
           className={`absolute inset-0 justify-center
@@ -65,9 +65,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
           )}
         </p>
         <p className="mt-1 text-sm text-gray-300 truncate">
-          <Link to={`/artists/${song?.snippet.channelId}`}>
             {song.snippet.channelTitle}
-          </Link>
         </p>
       </div>
     </div>
