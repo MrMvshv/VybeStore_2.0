@@ -47,10 +47,24 @@ export const youtubeV3Api = createApi({
                 },
             }),
         }),
+
+        getPlaylistsByGenre: builder.query({ 
+            query: (genre) => ({
+                url: '/search',
+                params: {
+                    q: `top ${genre} music playlists this week`,
+                    part: 'snippet,id',
+                    maxResults: '50',
+                    order: 'date',
+                    type: 'playlist',
+                },
+            }),
+        }),
     })
 })
 export const {
     useGetTopChartsQuery,
     useGetSongsBySearchQuery,
     useGetPlaylistDetailsQuery,
+    useGetPlaylistsByGenreQuery,
 } = youtubeV3Api;

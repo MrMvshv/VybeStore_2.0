@@ -37,7 +37,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
   if (error) return <Error />;
 
   const linkUrl = details
-    ? `https://www.youtube.com/watch?v=${details.items[0].id}&list=${song.id.playlistId}&index=1`
+    ? `https://www.youtube.com/watch?v=${details.items[0].id}&list=${song.id.playlistId}&index=2`
     : "";
 
   return (

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
 import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
 
-const CountryTracks = () => {
+const FeaturedPlaylists = () => {
   const [country, setCountry] = useState('');
   const [loading, setLoading] = useState(true);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
@@ -25,7 +25,7 @@ const CountryTracks = () => {
 
   return (
     <div className="flex flex-col">
-      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Around you <span className="font-black">{country}</span></h2>
+      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Featured Playlists<span className="font-black">{country}</span></h2>
 
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
@@ -43,4 +43,4 @@ const CountryTracks = () => {
   );
 };
 
-export default CountryTracks;
+export default FeaturedPlaylists;
